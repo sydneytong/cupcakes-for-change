@@ -11,7 +11,7 @@ import UIKit
 class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    //var x = [String]()
+    var x = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,14 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        
+        cell.textLabel?.text = "I'm cell #\(indexPath.row)"
         
         
         return cell
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return x.count
+        return 100
     }
 
 }
