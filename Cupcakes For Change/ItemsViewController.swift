@@ -10,25 +10,29 @@ import UIKit
 
 class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
-    var x = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+       override func viewDidLoad() {
+               super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBOutlet weak var amountFoodLabel: UITableView!
+    @IBOutlet weak var nameLabel: UITableView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = "I'm cell #\(indexPath.row)"
-        
         
         return cell
     }
@@ -36,5 +40,4 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
-
 }
